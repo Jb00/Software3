@@ -1,4 +1,4 @@
-#include <QApplication>
+
 #include "User.h"
 
 User::User(){
@@ -7,7 +7,7 @@ User::User(){
     typeUser = "";
 }
 
-User::~User(){}
+
 
 User::User(QString aPassword, QString aName, QString aType)
 {
@@ -15,6 +15,8 @@ User::User(QString aPassword, QString aName, QString aType)
     name = aName;
     typeUser = aType;
 }
+
+User::~User(){}
 
 //Return id
 QString User::getPassword()

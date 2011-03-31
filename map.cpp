@@ -3,14 +3,13 @@
 Map::Map()
 {
 
-    userList = new QList<User>();
-    genUserList();
+//    userList = new QList<User>();
+  //  genUserList();
 }
 
 Map::~Map(){}
 
 void Map::genUserList(){
 
-    aUser = new User();
 }
 

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'invalidwindow.h'
 **
-** Created: Mon Mar 28 21:29:53 2011
+** Created: Wed Mar 30 22:39:47 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

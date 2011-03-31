@@ -66,17 +66,6 @@ void AddFacCtrl::addToDb()
         facilityList=NULL;
 
 
-
-
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     //   db.setDatabaseName ("/home/bartosz/Documents/EOBCSTORAGE");
-        db.setDatabaseName ("/home/bob/repo/EOBCSTORAGE");
-        if (!db.open()) {
-            qDebug() << "FAIL";
-      /*      QMessageBox::warning(this, QObject::tr("Unable to open database"), QObject::tr("An error occured while "
-                                                                         "opening the connection: ") + db.lastError().text());*/}
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     QSqlQuery query;
     QString queryText;
 
@@ -119,7 +108,7 @@ void AddFacCtrl::addToDb()
 */
 
 
-db.close();
+//db.close();
 }
     id = -1;
     facilityName ="";

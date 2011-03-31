@@ -71,6 +71,11 @@ int Facility::getSizePatientAcute()
     return listAcute.size();
 }
 
+int Facility::getSizeAvailableAcute()
+{
+    return (getSizeAcute() - getSizePatientAcute());
+}
+
 //Add Bed Complex
 void Facility::addBedComplex()
 {
@@ -165,6 +170,11 @@ int Facility::getSizePatientComplex()
     return listComplex.size();
 }
 
+int Facility::getSizeAvailableComplex()
+{
+    return (getSizeComplex() - getSizePatientComplex());
+}
+
 
 
 //Add Bed LTC
@@ -172,7 +182,6 @@ void Facility::addBedLTC()
 {
     Bed * aBed = new Bed(); //Create a new bed
     listBedLTC.append(aBed); //Add at the end of the list
-    std::cout<< listBedLTC.first()->getUse();                   //TO REMOVE TEST
 }
 
 int Facility::getSizeLTC()
@@ -191,7 +200,6 @@ bool Facility::removeBedLTC(int number)
     int loop=0;
     while (number != 0 || !isEmptyLTC())
     {
-        std::cout << listBedLTC.front()->getUse();              //TO REMOVE TEST
         if (listBedLTC.front()->getUse() == 0 )
         {
             listBedLTC.removeFirst();
@@ -213,7 +221,6 @@ void Facility::addPatientLTC(Patient* aPatient)
 bool Facility::removePatientWL(Patient* aPatient)
 {
     int position= listWL.indexOf(aPatient);// Return -1 if not in the list
-    std::cout << "THE POSITION"<<position;
     if( position != -1) //If it is in the list
     {
         listWL.removeAt(position);
@@ -244,6 +251,11 @@ bool Facility::NUsedBedLTC()
 int Facility::getSizePatientLTC()
 {
     return listLTC.size();
+}
+
+int Facility::getSizeAvailableLTC()
+{
+    return (getSizeLTC() - getSizePatientLTC());
 }
 
 

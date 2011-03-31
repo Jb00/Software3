@@ -14,6 +14,8 @@
 #include "Patient.h"
 #include "Facility.h"
 #include "facilitywindow.h"
+#include "adduserctrl.h"
+#include "MessageController.h"
 
 
 class MapWinCtrl: public genCTRL
@@ -28,7 +30,7 @@ public:
     void setupPatients();
     void setupFacility();
     void gotoFacility();
-    //void goToLogin();
+    void setupUser();
 
 private:
 

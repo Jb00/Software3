@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mapwindow.h'
 **
-** Created: Tue Mar 29 14:54:17 2011
+** Created: Wed Mar 30 22:44:12 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

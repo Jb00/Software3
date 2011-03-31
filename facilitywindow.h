@@ -7,6 +7,9 @@
 #include "genui.h"
 #include "facilitywinctrl.h"
 #include "Facility.h"
+#include "AddBedController.h"
+#include "AssignHospitalController.h"
+#include "AssignLTCController.h"
 
 namespace Ui {
     class FacilityWindow;
@@ -29,11 +32,14 @@ private:
 
     FacilityWinCtrl* facCtrl;
     Facility* facility;
+    Patient * aPatient2;
 
 
 private slots:
 
-    void typeRadio_selected();
+    void AcuteSelected();
+    void ComplexSelected();
+    void LTCSelected();
 
     void waitingBtn_clicked();
     void okBtn_clicked();

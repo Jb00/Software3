@@ -29,20 +29,12 @@ void AddUserCtrl::addToDb()
         qDebug() <<userList->size();
 
         User * aUser = new User(password,userName,type); //Create the facility to add
+                qDebug() <<"middle";
         userList->append(aUser); //Append it to the list of facility
         qDebug() <<"AFTER";
         qDebug() <<userList->size();
         userList=NULL;
 
-
-
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-     //   db.setDatabaseName ("/home/bartosz/Documents/EOBCSTORAGE");
-        db.setDatabaseName ("/home/bob/repo/EOBCSTORAGE");
-   /*     if (!db.open()) {
-            QMessageBox::warning(this, QObject::tr("Unable to open database"), QObject::tr("An error occured while "
-                                                                         "opening the connection: ") + db.lastError().text());}*/
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     QSqlQuery query;
     QString queryText;
@@ -69,21 +61,6 @@ void AddUserCtrl::addToDb()
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     query.exec(); //executing the query
-
-    //checking if the facility was added correctly and if not an error is produced
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- /*   if(query.numRowsAffected() > 0){
-        QMessageBox::information( this, "Add Facility Popup",
-        "Facility " + facilityName + "has been added sucessfully!!");
-    }
-    else{
-        QMessageBox::information( this, "error",
-       "An error has occured while adding " + facilityName + " to the database");
-    }*/
-
-
-
-db.close();
 }
     userName="";
     password="";

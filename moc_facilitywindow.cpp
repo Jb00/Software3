@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'facilitywindow.h'
 **
-** Created: Tue Mar 29 14:56:52 2011
+** Created: Wed Mar 30 22:39:52 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_FacilityWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,15 +32,18 @@ static const uint qt_meta_data_FacilityWindow[] = {
 
  // slots: signature, parameters, type, tag, flags
       16,   15,   15,   15, 0x08,
-      37,   15,   15,   15, 0x08,
-      58,   15,   15,   15, 0x08,
-      74,   15,   15,   15, 0x08,
+      32,   15,   15,   15, 0x08,
+      50,   15,   15,   15, 0x08,
+      64,   15,   15,   15, 0x08,
+      85,   15,   15,   15, 0x08,
+     101,   15,   15,   15, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_FacilityWindow[] = {
-    "FacilityWindow\0\0typeRadio_selected()\0"
+    "FacilityWindow\0\0AcuteSelected()\0"
+    "ComplexSelected()\0LTCSelected()\0"
     "waitingBtn_clicked()\0okBtn_clicked()\0"
     "cancelBtn_clicked()\0"
 };
@@ -76,13 +79,15 @@ int FacilityWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: typeRadio_selected(); break;
-        case 1: waitingBtn_clicked(); break;
-        case 2: okBtn_clicked(); break;
-        case 3: cancelBtn_clicked(); break;
+        case 0: AcuteSelected(); break;
+        case 1: ComplexSelected(); break;
+        case 2: LTCSelected(); break;
+        case 3: waitingBtn_clicked(); break;
+        case 4: okBtn_clicked(); break;
+        case 5: cancelBtn_clicked(); break;
         default: ;
         }
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

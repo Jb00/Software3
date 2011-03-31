@@ -47,8 +47,9 @@ void CreateNewFacilityController::addToDb()
         qDebug() <<"AFTER";
         qDebug() <<facilityList->size();
         facilityList=NULL;
+    }
 
-
+/*
     qDebug()<<id;
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName ("127.0.0.1");
@@ -56,8 +57,8 @@ void CreateNewFacilityController::addToDb()
     db.setUserName ("root");
     db.setPassword ("bobpw");
     if (!db.open()) {
-        /*QMessageBox::warning(this, tr("Unable to open database"), tr("An error occured while "
-                                                                     "opening the connection: ") + db.lastError().text());*/
+        QMessageBox::warning(this, tr("Unable to open database"), tr("An error occured while "
+                                                                     "opening the connection: ") + db.lastError().text());
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,11 +101,11 @@ void CreateNewFacilityController::addToDb()
         QMessageBox::information( this, "error",
        "An error has occured while adding " + facilityName + " to the database");
     }
-*/
+
 
 
 db.close();
-}
+}*/
     id = -1;
     facilityName ="";
     x= -1;
@@ -114,6 +115,7 @@ db.close();
     LTC =-1;
     area ="";
 }
+
 
 void CreateNewFacilityController::setId(int anId)
 {

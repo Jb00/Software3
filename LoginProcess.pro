@@ -32,7 +32,13 @@ SOURCES += main.cpp\
     CreateNewFacilityController.cpp \
     Patient.cpp \
     Bed.cpp \
-    facilitywindow.cpp
+    facilitywindow.cpp \
+    AddBedController.cpp \
+    AssignLTCController.cpp \
+    AssignHospitalController.cpp \
+    AddWLController.cpp \
+    MessageController.cpp \
+    Message.cpp
 
 HEADERS  += loginwindow.h \
     User.h \
@@ -52,9 +58,14 @@ HEADERS  += loginwindow.h \
     CreateNewFacility.h \
     CreateNewFacilityController.h \
     Patient.h \
-    CreateNewUser.h \
     Bed.h \
-    facilitywindow.h
+    facilitywindow.h \
+    AddBedController.h \
+    AssignLTCController.h \
+    AssignHospitalController.h \
+    AddWLController.h \
+    MessageController.h \
+    Message.h
 
 FORMS    += loginwindow.ui \
     mapwindow.ui \

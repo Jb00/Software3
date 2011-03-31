@@ -6,6 +6,9 @@
 #include "Bed.h"
 #include <iostream>
 
+
+#include <QDebug>
+
 class Facility
 {
 
@@ -47,6 +50,7 @@ public:
     bool NUsedBedAcute();   //Non Used Bed for Acute care. True = success false = fail
     void addPatientAcute(Patient*);
     int getSizePatientAcute();
+    int getSizeAvailableAcute();
     //Complex
     void addBedComplex();
     bool removeBedComplex(int);
@@ -55,6 +59,7 @@ public:
     void addPatientComplex(Patient*);
     bool NUsedBedComplex(); //Non Used Bed for Complex Care. True = success false = fail
     int getSizePatientComplex();
+    int getSizeAvailableComplex();
     //LTC
     void addBedLTC();
     bool removeBedLTC(int);
@@ -66,6 +71,7 @@ public:
     void addWaitingList(Patient*);
     int getSizeWL();
     bool NUsedBedLTC();
+    int getSizeAvailableLTC();
 
     QString getName();
     QString getArea();
