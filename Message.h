@@ -8,6 +8,8 @@
 #include <QDialog>
 #include <qobject.h>
 
+#include "MessageController.h"
+
 class Message
 {
 private:
@@ -17,6 +19,7 @@ public:
     Message();
     void treceive();
     void tsend(QString);
+    int tmp;
 };
 
 #endif // MESSAGE_H

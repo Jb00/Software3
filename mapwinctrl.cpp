@@ -1,8 +1,10 @@
 #include "mapwinctrl.h"
 
+MapWinCtrl* MapWinCtrl::anInstance =NULL;
+
 MapWinCtrl::MapWinCtrl()
 {
-    QDate aDate(1998,2,3);
+    QDateTime aDate = QDateTime::fromString("2003-05-30T09:00:00","yyyy-MM-dThh:mm:ss");
 
     //fake data
     aFacility2 = new Facility(5,"TheFacility",4,2,4,5,0); //Will use the main facility list, but for now.LEt's assume 1 facility TO CHANGE
@@ -21,9 +23,25 @@ MapWinCtrl::MapWinCtrl()
    MessageController::getInstance()->start();
 
 
+   QDateTime date = QDateTime::fromString("M1d1y9800:01:02","'M'M'd'd'y'yyhh:mm:ss");
+   qDebug() << date;
+
+   QDateTime dateTime2 = QDateTime::fromString("2003-05-30T09:00:00","yyyy-MM-dThh:mm:ss");
+   qDebug() << dateTime2;
+
+//2003-05-30T09:00:00
+
 }
 MapWinCtrl::~MapWinCtrl(){}
 
+
+MapWinCtrl* MapWinCtrl::getinstance()
+{
+    if(!anInstance) //If it is doesn't already exist
+        anInstance = new MapWinCtrl; //Create a new instance, new for the heap.
+
+    return anInstance;//Return the instance.
+}
 
 void MapWinCtrl::goToAddUser()
 {
@@ -59,8 +77,8 @@ void MapWinCtrl::setupPatients()
     QString HealthCardNum;
     QString firstName ;
     QString lastName;
-    QDate dateAdmitted ;
-    QDate datePlacedOnWaitingList;
+    QDateTime dateAdmitted ;
+    QDateTime datePlacedOnWaitingList;
     int reqCare;
     int occCare;
 
@@ -70,8 +88,8 @@ void MapWinCtrl::setupPatients()
          HealthCardNum =query.value(3).toString();
          firstName = query.value(2).toString();
          lastName = query.value(4).toString();
-         datePlacedOnWaitingList = query.value(1).toDate();
-         dateAdmitted = query.value(0).toDate();
+         datePlacedOnWaitingList = query.value(1).toDateTime();
+         dateAdmitted = query.value(0).toDateTime();
          occCare = query.value(5).toInt();
          reqCare = query.value(6).toInt();
 
@@ -175,3 +193,18 @@ void MapWinCtrl::setupFacility()
     query.clear();
 }
 
+void MapWinCtrl::getFacilityFromid(QString anId,Facility &aFacility)
+{
+    int id = anId.toInt();
+
+    for (int i =0;i<listOfFacility.size(); i++)
+    {
+        qDebug() << listOfFacility.at(i)->getId();
+        if (listOfFacility.at(i)->getId() == 3) //anId in the real case
+        {
+            aFacility = *(listOfFacility.at(i)) ;
+        }
+    }
+
+
+}

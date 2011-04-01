@@ -2,6 +2,7 @@
 
 Message::Message()
 {
+    tmp =0;
     udpSocket = new QUdpSocket(); //Socket To send the udp message
     udpReceive = new QUdpSocket(); //Socket to receive it
     udpReceive ->bind(45555,QUdpSocket::ShareAddress); //Bind on correct port and share the address,
@@ -11,10 +12,11 @@ Message::Message()
 
 void Message::tsend(QString aMessage)
 {
+  //  qDebug() <<aMessage;
    QByteArray datagram(aMessage.toAscii());
 
   //  QByteArray datagram = "Message";
-    udpSocket->writeDatagram(datagram.data(), datagram.size(),QHostAddress("192.168.0.20"),45555);
+    udpSocket->writeDatagram(datagram.data(), datagram.size(),QHostAddress("192.168.0.15"),45555);
 }
 
 void Message::treceive()
@@ -22,14 +24,15 @@ void Message::treceive()
 
         while(udpReceive->hasPendingDatagrams())
         {
-            qDebug() <<"test";
+            qDebug() <<tmp;
+            tmp++;
             QByteArray datagram;
             datagram.resize(udpReceive->pendingDatagramSize());
             udpReceive->readDatagram(datagram.data(), datagram.size());
       //      ui->label->setText(tr("Received datagram: \"%1\"").arg(datagram.data()));
 
-            qDebug() << datagram.data();
+     //       qDebug() << datagram.data();
+            MessageController::getInstance()->received(datagram.data());
+
         }
 }
-
-

@@ -18,8 +18,10 @@ AddWLController* AddWLController::getInstance()
 void AddWLController::addWaitingList(Patient * aPatient,Facility * aLTC)
 {
     QDate today;
+
     today.currentDate();
-    aPatient->setdateWL(today);
+    QDateTime anowDate(today);
+    aPatient->setdateWL(anowDate);
     aLTC->addWaitingList(aPatient);
 }
 

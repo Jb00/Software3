@@ -3,9 +3,11 @@
 
 #include <QString>
 #include <QDate>
-//Patient.h
-//Define a patient
+#include <QDateTime>
 
+//Patient
+//Define a patient
+//This is an entity object from Deliverable 1 && 2
 
 class Patient
 {
@@ -21,26 +23,26 @@ private :
         QString healthCardNum;
         QString fName;
         QString lName;
-        QDate dateAdmitted;
-        QDate dateWL;
+        QDateTime dateAdmitted;
+        QDateTime dateWL;
         int reqCare;
         int occCare;
 
 
 
 public:
-    Patient(QString,QString,QString,QDate,QDate,int,int);
+    Patient(QString,QString,QString,QDateTime,QDateTime,int,int);
     ~Patient();
 
     void setNeeded(int);
     void setFacility(QString);
     void setBed(int);
-    void setdateWL(QDate);
+    void setdateWL(QDateTime);
     QString gethealthCard();
     QString getFName();
     QString getLName();
-    QDate getAdmission();
-    QDate getDateWL();
+    QDateTime getAdmission();
+    QDateTime getDateWL();
     int getNeeded(); //Needed Care
 
 };

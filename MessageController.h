@@ -2,11 +2,19 @@
 #define MESSAGECONTROLLER_H
 
 #include <QString>
-#include <QQueue>
+#include <QList>
 #include <QThread>
 #include <QDebug>
 #include <QTimer>
+#include <QDate>
+#include <qdatetime.h>
 #include "Message.h"
+#include <QtXml/QDomDocument>
+#include "xmlreader.h"
+#include <QList>
+
+#include "mapwinctrl.h"
+#include <stdlib.h> //For random
 
 
 class MessageController : public QThread
@@ -17,13 +25,17 @@ private :
         MessageController();
         static MessageController* anInstance; //The instance of the Singleton
 
-        QQueue<QString> theMessages;
-
+        QList<QString> theMessages;
+        QList<QString> receivedMessage;
+        XMLReader *xr;
+        void xmlToAction(QString );
 public:
         static MessageController* getInstance();
         void toSend(QString);
         ~MessageController();
         void run();
+        void received(QString);
+        QList<QString> setGetData(QList<QString>,QString,QDate,QDate);
 
 private slots:
    // void sendMessage();

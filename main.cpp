@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
+    srand( (unsigned)time( NULL ) ); //So rand will be random
     QApplication a(argc, argv);
     LoginWindow w;
     w.show();

@@ -11,18 +11,21 @@
 #include "genctrl.h"
 #include "map.h"
 #include "adduserctrl.h"
-#include "Patient.h"
-#include "Facility.h"
+#include "MessageController.h"
 #include "facilitywindow.h"
 #include "adduserctrl.h"
-#include "MessageController.h"
+#include "Patient.h"
+#include "Facility.h"
 
 
+
+
+#include <QDateTime>
 class MapWinCtrl: public genCTRL
 {
 public:
 
-    MapWinCtrl();
+
     ~MapWinCtrl();
 
     void goToAddUser();
@@ -31,14 +34,17 @@ public:
     void setupFacility();
     void gotoFacility();
     void setupUser();
+    static MapWinCtrl* getinstance();
+    void getFacilityFromid(QString, Facility&);
 
 private:
 
+    static MapWinCtrl* anInstance;
+    MapWinCtrl();
     AddUserWindow* addUserWin;
     AddFacility* addFac;
     Map* map;
     FacilityWindow* aFacilityView;
-
 
     //FAKE DATA TEST
 

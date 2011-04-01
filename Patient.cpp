@@ -1,7 +1,7 @@
 
 #include "Patient.h"
 
-Patient::Patient(QString aHealthCardNum,QString aFName,QString aLName,QDate aDateAdmitted,QDate aDateWL,int aReqCare,int anOccCare)
+Patient::Patient(QString aHealthCardNum,QString aFName,QString aLName,QDateTime aDateAdmitted,QDateTime aDateWL,int aReqCare,int anOccCare)
 {
     aHealthCardNum = healthCardNum;
     fName = aFName;
@@ -29,7 +29,7 @@ void Patient::setBed(int aBed)
     bedNumber =aBed;
 }
 
-void Patient::setdateWL(QDate aDate)
+void Patient::setdateWL(QDateTime aDate)
 {
     dateWL =aDate;
 }
@@ -49,12 +49,12 @@ QString Patient::getLName()
     return lName;
 }
 
-QDate Patient::getDateWL()
+QDateTime Patient::getDateWL()
 {
     return dateWL;
 }
 
-QDate Patient::getAdmission()
+QDateTime Patient::getAdmission()
 {
     return dateAdmitted;
 }

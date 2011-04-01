@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     AssignHospitalController.cpp \
     AddWLController.cpp \
     MessageController.cpp \
-    Message.cpp
+    Message.cpp \
+    xmlreader.cpp
 
 HEADERS  += loginwindow.h \
     User.h \
@@ -65,7 +66,8 @@ HEADERS  += loginwindow.h \
     AssignHospitalController.h \
     AddWLController.h \
     MessageController.h \
-    Message.h
+    Message.h \
+    xmlreader.h
 
 FORMS    += loginwindow.ui \
     mapwindow.ui \

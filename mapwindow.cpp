@@ -5,7 +5,6 @@ MapWindow::MapWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MapWindow)
 {
-    mapCtrl = new MapWinCtrl();
     QImage img("map2.png");
 
     ui->setupUi(this);
@@ -21,13 +20,15 @@ MapWindow::MapWindow(QWidget *parent) :
     connect(ui->actionAdd_newUser, SIGNAL(triggered()), this, SLOT(createUser_clicked()));
     connect(ui->actionCreate_Facility, SIGNAL(triggered()), this, SLOT(createFac_clicked()));
     connect(ui->actionFacilityView,SIGNAL(triggered()), this, SLOT(facilityView()));
+    connect(ui->actionAbout,SIGNAL(triggered()), this, SLOT(reportSetup()));
+    MapWinCtrl::getinstance();
 }
 
 MapWindow::~MapWindow(){delete ui;}
 
-void MapWindow::createUser_clicked(){mapCtrl->goToAddUser();}
+void MapWindow::createUser_clicked(){MapWinCtrl::getinstance()->goToAddUser();}
 
-void MapWindow::createFac_clicked(){mapCtrl->goToAddFac();}
+void MapWindow::createFac_clicked(){MapWinCtrl::getinstance()->goToAddFac();}
 
 void MapWindow::keyPressEvent(QKeyEvent *event){
 
@@ -36,11 +37,22 @@ void MapWindow::keyPressEvent(QKeyEvent *event){
     case Qt::Key_Escape:
         qApp->quit();
         break;
-
     }
 }
 
 void MapWindow::facilityView()
 {
-    mapCtrl->gotoFacility();
+    MapWinCtrl::getinstance()->gotoFacility();
+}
+
+void MapWindow::reportSetup()
+{
+    QList<QString> listResponse;
+    QList<QString> listFacilityDemanded;
+    listFacilityDemanded <<"test" << "Test2";
+    QString type ="AC";
+    QDate aDateB(1990,5,12);
+    QDate aDateA(1994,5,12);
+    listResponse = MessageController::getInstance()->setGetData(listFacilityDemanded,type,aDateB,aDateA);
+    qDebug() << listResponse.size();
 }

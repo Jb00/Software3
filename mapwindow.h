@@ -7,6 +7,10 @@
 #include "mapwinctrl.h"
 #include "googlemap.h"
 
+
+//TEST REPORT QLIST
+#include <QList>
+#include <QString>
 namespace Ui {
     class MapWindow;
 }
@@ -25,6 +29,8 @@ private:
     Ui::MapWindow *ui;
     MapWinCtrl* mapCtrl;
     QGoogleMap* aMap;
+    QList<QString> listResponse;
+
 
 private slots:
 
@@ -32,6 +38,7 @@ private slots:
     void createFac_clicked();
     //void logout_clicked();
     void facilityView();
+    void reportSetup();
 };
 
 #endif // MAPWINDOW_H

@@ -138,7 +138,8 @@ void FacilityWindow::okBtn_clicked()
 void FacilityWindow::cancelBtn_clicked()
 {
 
-    QDate aDate(1998,2,3);
+    QDateTime aDate = QDateTime::fromString("2003-05-30T09:00:00","yyyy-MM-dThh:mm:ss");
+
     aPatient2 = new Patient ("12e","Bob","Henry",aDate,aDate,7,8);
 
 
